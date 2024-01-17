@@ -2,6 +2,4 @@
 
 ## Sobre o Projeto
 
-Este projeto é uma aplicação web para gerenciamento de tarefas. Inicialmente o "Do it, now!" foi construido usando servlets para a terceira nota do terceiro período
-de 2023.2 do curso de Análise e Desenvolvimento de Sistemas da UNIFIP. Dessa vez o "Do it, now!" Está sendo construido com Spring + Spring Boot do lado do servidor e
-Thymeleaf como template engine para deixar o lado do cliente um pouco mais dinâmico.
+“Do it, Now!” é um projeto de aplicação web dedicado ao gerenciamento de tarefas. Originalmente, foi desenvolvido utilizando servlets como parte da avaliação do terceiro período do curso de Análise e Desenvolvimento de Sistemas da UNIFIP no semestre de 2023.2. Essa versão do “Do it, Now!” foi construída utilizando o Spring e o Spring Boot no lado do servidor, proporcionando uma estrutura robusta e eficiente, e Thymeleaf como template engine, tornando o lado do cliente mais dinâmico e interativo.
