@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Open Sans, serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 52rem;
+    height: 39rem;
+    background-color: #e3f1fc;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card {
+    width: 32rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.titulo {
+    font-size: large;
+    font-weight: bold;
+}
+
+.tarefas-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 10rem;
+}
+
+input[name="descricao"]{
+    width: 21rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    font-size: medium;
+}
+
+.adicionar-tarefa{
+    /*background-color: red;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32rem;
+}
+
+.tarefa{
+    list-style: none;
+    width: 23rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e3f1fc;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.descricao{
+    margin-left: 1rem;
+}
+
+.round-button {
+    width: 1.6rem;
+    height: 1.6rem;
+    border: thin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.greenbg{
+    background-color: #00ff00;
+}
+
+.redbg{
+    background-color: #ff0000;
+}
+
+i {
+    display: flex;
+    color: #fff;
+    align-self: center;
+    justify-content: center;
+}
+
+.tarefas-container{
+    height: 20rem;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+
+.tarefas-titulo{
+    margin-top: 1rem;
+}
+
+.tarefas-space{
+    display: flex;
+    flex-direction: column;
+}
+
+.botoes-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10rem;
+    margin-right: 1rem;
+}
+
+.botoes-redondos-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 15rem;
+}
+
+select, input[type = "date"]{
+    height: 1.6rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border: thin solid #1a1a1a;
+}
+
+.tarefas-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.tarefas-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.tarefas-container::-webkit-scrollbar-thumb {
+    background: #000000;
+}
+
+.tarefas-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
