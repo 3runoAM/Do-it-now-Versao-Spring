@@ -3,11 +3,14 @@ package com.doitnow.doitnow.controllers;
 import com.doitnow.doitnow.entities.Tarefa;
 import com.doitnow.doitnow.enums.Prioridade;
 import com.doitnow.doitnow.repositorios.TarefasRepo;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 
@@ -28,18 +31,29 @@ public class TarefasController {
     }
 
     @PostMapping
-    public String adicionarTarefa(String descricao, String prioridade, String method) {
-        Tarefa tarefa = prioridade == null ? new Tarefa(descricao, Prioridade.BAIXA) :
-                new Tarefa(descricao, Prioridade.valueOf(prioridade));
+    public String adicionarTarefa(@Valid @ModelAttribute Tarefa tarefa, Errors errors){
+        if(errors.hasErrors()){
+            return "tarefas";
+        }
         log.info("Tarefa criada: " + tarefa.toString());
         tarefasRepo.save(tarefa);
         return "redirect:/tarefas";
     }
 
-    @PutMapping
-    public String atualizarTarefa(String id){
+    @PatchMapping
+    public String concluirTarefa(String id){
         Tarefa tarefa = tarefasRepo.findTarefaById(Long.parseLong(id));
-        tarefa.setConcluido(true);
+        tarefa.concluirTarefa();
+        tarefasRepo.save(tarefa);
+        return "redirect:/tarefas";
+    }
+
+    @PutMapping
+    public String editarTarefa(@Valid @ModelAttribute Tarefa tarefa, Errors errors, Model model){
+        if(errors.hasErrors()){
+            return "edicao";
+        }
+        log.info("Tarefa editada: " + tarefa.toString());
         tarefasRepo.save(tarefa);
         return "redirect:/tarefas";
     }
@@ -51,10 +65,15 @@ public class TarefasController {
     }
 
     @ModelAttribute("listaDeTarefas")
-    public List<Tarefa> addTarefasToModel(Model model) {
+    public List<Tarefa> addTarefasToModel() {
         List<Tarefa> tarefa = tarefasRepo.findTarefasByConcluido(false);
         tarefa.sort(Comparator.comparing(Tarefa::getPrioridade));
         return tarefa;
+    }
+
+    @ModelAttribute("tarefa")
+    public Tarefa addTarefaToModel(){
+        return new Tarefa();
     }
 }
 

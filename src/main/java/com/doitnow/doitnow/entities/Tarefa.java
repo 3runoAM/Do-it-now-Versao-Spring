@@ -22,21 +22,15 @@ public class Tarefa {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @NotBlank(message="A descrição não pode estar vazia")
-    @Size(min = 3, max = 15, message = "A descrição deve ter entre 3 e 15 caracteres")
+    @Size(min = 3, max = 15, message = "A descrição deve conter entre 3 e 15 caracteres")
     private String descricao;
     private Prioridade prioridade;
     private LocalDate dataCriacao;
-    private LocalDate dataConclusao = null;
+    private String dataConclusao = null;
     private boolean concluido = false;
-
-    public Tarefa(String descricao, Prioridade prioridade) {
-        this.descricao = descricao;
-        this.prioridade = prioridade;
-        this.dataCriacao = LocalDate.now();
-    }
 
     public void concluirTarefa(){
         this.concluido = true;
-        this.dataConclusao = LocalDate.now();
+        this.dataConclusao = LocalDate.now().toString();
     }
 }

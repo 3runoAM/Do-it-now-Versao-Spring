@@ -12,22 +12,23 @@
     </head>
     <body>
         <div class="content-container">
-            <form class="tarefas-form card" method="POST" th:action="@{/tarefas}">
+            <form class="tarefas-form card" method="POST" th:action="@{/tarefas}" th:object="${tarefa}">
                 <h1 class="titulo">Adicionar tarefa</h1>
-                <input name="descricao" type="text" minlength="3" maxlength="15" required>
+                <p class="erro-validacao" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Descrição é inválida.</p>
+                <input name="descricao" type="text" th:field="*{descricao}" required>
                 <div class="adicionar-tarefa">
                     <div class="tarefa-detalhes">
-                        <select name="prioridade">
+                        <select th:field="${tarefa.prioridade}" name="prioridade">
                             <option value="" selected disabled>Prioridade</option>
                             <option value="BAIXA">Baixa</option>
                             <option value="MEDIA">Média</option>
                             <option value="ALTA">Alta</option>
                         </select>
-                        <input type="date" name="dataConclusao">
+                        <input class="data-conclusao" th:field="*{dataConclusao}" type="date" name="dataConclusao">
                     </div>
                     <br/>
                 </div>
-                <button type="submit">Adicionar</button>
+                <button class="botao adc" type="submit">Adicionar</button>
             </form>
 
             <div class="tarefas-container card">
@@ -37,23 +38,21 @@
                         <p class="descricao" th:text="${tarefa.descricao}">Tarefa placeholder.</p><br/>
                         <div class="botoes-container">
                             <div class="botoes-redondos-container">
-                                <form th:method="PUT" th:action="@{/tarefas}">
+                                <form th:method="PATCH" th:action="@{/tarefas}">
                                     <button class="round-button greenbg" type="submit"><i class="bi bi-check-circle-fill"></i></button>
                                     <input type="hidden" name="id" th:value="${tarefa.id}" />
-                                    <input type="hidden" name="descricao", th:value="${tarefa.descricao}">
+                                    <input type="hidden" name="descricao" th:value="${tarefa.descricao}">
                                 </form>
                                 <form th:method="DELETE" th:action="@{/tarefas}">
                                     <button class="round-button redbg" type="submit"><i class="bi bi-trash-fill"></i></button>
-                                    <input type="hidden" name="method" value="DELETE">
+                                    <input type="hidden" name="id" th:value="${tarefa.id}" />
+                                </form>
+                                <form th:method="GET" th:action="@{/edicao}">
+                                    <button class="round-button yellowbg" type="submit"><i class="bi bi-pencil-fill"></i></button>
                                     <input type="hidden" name="id" th:value="${tarefa.id}" />
                                 </form>
                             </div>
-                            <select name="prioridade">
-                                <option value="" selected disabled>Prioridade</option>
-                                <option value="BAIXA">Baixa</option>
-                                <option value="MEDIA">Média</option>
-                                <option value="ALTA">Alta</option>
-                            </select>
+                            <p class="prioridade" th:text="${tarefa.prioridade}"></p>
                         </div>
                     </li>
                 </ul>
