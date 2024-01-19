@@ -10,7 +10,34 @@
     <title>Do it, now!</title>
 </head>
     <body>
-        <div class="content-container">
+        <div class="menu-container">
+            <img class="imagem-usuário" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSppkoKsaYMuIoNLDH7O8ePOacLPG1mKXtEng&usqp=CAU" alt="Imagem do usuário">
+            <nav>
+                <ul class="nav-options">
+                    <li class="nav-option">
+                        <i class="bi bi-house-fill"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-option">
+                        <i class="bi bi-calendar3-fill"></i>
+                        <a href="#">Calendário</a>
+                    </li>
+                    <li class="nav-option">
+                        <i class="bi bi-clipboard-data-fill"></i>
+                        <a href="#">Planejamento</a>
+                    </li>
+                    <li class="nav-option">
+                        <i class="bi bi-clock-fill"></i>
+                        <a href="#">Histórico</a>
+                    </li>
+                </ul>
+                <div class="nav-option">
+                    <i class="bi bi-door-closed-fill"></i>
+                    <a href="">Log out</a>
+                </div>
+            </nav>
+        </div>
+        <div class="cards-container">
             <form class="edicao-form card" th:object="${tarefa}" th:method="PUT" th:action="@{/tarefas}">
                 <h1 class="titulo">Editar tarefa</h1>
                 <p class="erro-validacao" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Descrição Inválida.</p>
@@ -31,6 +58,8 @@
                 </div>
                 <button class="botao edt" type="submit">Salvar</button>
             </form>
+
+
         </div>
     </body>
 </html>

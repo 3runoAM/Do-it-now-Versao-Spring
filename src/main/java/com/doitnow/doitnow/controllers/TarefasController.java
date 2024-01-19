@@ -1,7 +1,6 @@
 package com.doitnow.doitnow.controllers;
 
 import com.doitnow.doitnow.entities.Tarefa;
-import com.doitnow.doitnow.enums.Prioridade;
 import com.doitnow.doitnow.repositorios.TarefasRepo;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -10,10 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
-
 
 @Controller
 @Slf4j
@@ -26,17 +23,19 @@ public class TarefasController {
     }
 
     @GetMapping
-    public String tarefas() {
+    public String tarefas(){
         return "tarefas";
     }
 
     @PostMapping
     public String adicionarTarefa(@Valid @ModelAttribute Tarefa tarefa, Errors errors){
         if(errors.hasErrors()){
+            log.error("Erro de validação na tarefa: " + tarefa.toString());
+            log.error("Erros: " + errors.toString());
             return "tarefas";
         }
-        log.info("Tarefa criada: " + tarefa.toString());
         tarefasRepo.save(tarefa);
+        log.info("Tarefa criada e salva na basa de dados: " + tarefa.toString());
         return "redirect:/tarefas";
     }
 
@@ -45,22 +44,27 @@ public class TarefasController {
         Tarefa tarefa = tarefasRepo.findTarefaById(Long.parseLong(id));
         tarefa.concluirTarefa();
         tarefasRepo.save(tarefa);
+        log.info("Tarefa concluída: " + tarefa.toString());
         return "redirect:/tarefas";
     }
 
     @PutMapping
-    public String editarTarefa(@Valid @ModelAttribute Tarefa tarefa, Errors errors, Model model){
+    public String editarTarefa(@Valid @ModelAttribute Tarefa tarefa, Errors errors){
         if(errors.hasErrors()){
+            log.error("Erro de validação ao editar " + tarefa.toString());
+            log.error("Erros: " + errors.toString());
             return "edicao";
         }
-        log.info("Tarefa editada: " + tarefa.toString());
         tarefasRepo.save(tarefa);
+        log.info("Tarefa salva com sucesso" + tarefa);
         return "redirect:/tarefas";
     }
 
     @DeleteMapping
-    public String deletarTarefa(String id){
+    public String deletarTarefa(@ModelAttribute Tarefa tarefa, String id){
+        log.info("Deletando Tarefa: " + tarefa.toString());
         tarefasRepo.deleteById(Long.parseLong(id));
+        log.info("Tarefa deletada com sucesso.");
         return "redirect:/tarefas";
     }
 
@@ -76,4 +80,3 @@ public class TarefasController {
         return new Tarefa();
     }
 }
-

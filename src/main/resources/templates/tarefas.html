@@ -11,7 +11,34 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="content-container">
+        <div class="menu-container">
+            <img class="imagem-usuário" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSppkoKsaYMuIoNLDH7O8ePOacLPG1mKXtEng&usqp=CAU" alt="Imagem do usuário">
+            <nav>
+                <ul class="nav-options">
+                    <li class="nav-option">
+                        <i class="bi bi-house-fill"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-option">
+                        <i class="bi bi-calendar3-fill"></i>
+                        <a href="#">Calendário</a>
+                    </li>
+                    <li class="nav-option">
+                        <i class="bi bi-clipboard-data-fill"></i>
+                        <a href="#">Planejamento</a>
+                    </li>
+                    <li class="nav-option">
+                        <i class="bi bi-clock-fill"></i>
+                        <a href="#">Histórico</a>
+                    </li>
+                </ul>
+                <div class="nav-option">
+                    <i class="bi bi-door-closed-fill"></i>
+                    <a href="">Log out</a>
+                </div>
+            </nav>
+        </div>
+        <div class="cards-container">
             <form class="tarefas-form card" method="POST" th:action="@{/tarefas}" th:object="${tarefa}">
                 <h1 class="titulo">Adicionar tarefa</h1>
                 <p class="erro-validacao" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Descrição é inválida.</p>
@@ -24,7 +51,7 @@
                             <option value="MEDIA">Média</option>
                             <option value="ALTA">Alta</option>
                         </select>
-                        <input class="data-conclusao" th:field="*{dataConclusao}" type="date" name="dataConclusao">
+                        <input class="data-conclusao" th:field="${tarefa.dataConclusao}" type="date" name="dataConclusao">
                     </div>
                     <br/>
                 </div>
@@ -58,5 +85,6 @@
                 </ul>
             </div>
         </div>
+    </div>
     </body>
 </html>

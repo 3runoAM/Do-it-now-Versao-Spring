@@ -21,13 +21,16 @@ public class Tarefa {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @NotBlank(message="A descrição não pode estar vazia")
+
+    @NotBlank(message = "A descrição não pode estar vazia")
     @Size(min = 3, max = 15, message = "A descrição deve conter entre 3 e 15 caracteres")
     private String descricao;
+
     private Prioridade prioridade;
-    private LocalDate dataCriacao;
+    private LocalDate dataCriacao = LocalDate.now();
     private String dataConclusao = null;
     private boolean concluido = false;
+
 
     public void concluirTarefa(){
         this.concluido = true;

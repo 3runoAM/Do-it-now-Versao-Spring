@@ -2,6 +2,7 @@ package com.doitnow.doitnow.controllers;
 
 import com.doitnow.doitnow.entities.Tarefa;
 import com.doitnow.doitnow.repositorios.TarefasRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@Slf4j
 @RequestMapping("/edicao")
 public class EdicaoController {
     private final TarefasRepo tarefasRepo;
@@ -18,12 +20,13 @@ public class EdicaoController {
     }
 
     @GetMapping
-    public String edicao(Model model){
+    public String edicao(){
         return "edicao";
     }
 
     @ModelAttribute("tarefa")
-    public Tarefa addTarefaToModel(String id){
+    public Tarefa addTarefaToModelForEditing(String id){
+        log.info("Tarefa requisitada para edição: " + tarefasRepo.findTarefaById(Long.parseLong(id)).toString());
         return tarefasRepo.findTarefaById(Long.parseLong(id));
     }
 }
