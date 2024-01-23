@@ -1,0 +1,126 @@
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 94em;
+    height: 58em;
+
+    border-radius: 2em;
+    background: #f2f2f2;
+}
+
+.card {
+    width: 40em;
+    border-radius: 2em;
+    background: #FFF;
+}
+
+.coluna1, .coluna2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 40em;
+    height: 58em;
+}
+
+.adicionar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 18em;
+
+}
+
+.tarefas-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 35em;
+    overflow-y: scroll;
+}
+
+.tarefas-space{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    padding: 0;
+}
+
+.tarefas-titulo{
+    margin-top: 1em;
+}
+
+li:first-child{
+    margin-top: 1.8em;
+}
+
+.tarefa{
+    display: flex;
+    align-items: center;
+    gap: 5em;
+
+    background: #f2f2f2;
+    border-radius: 1em;
+    width: 30em;
+    height: 5em;
+}
+
+.botoes-container{
+    display: flex;
+    gap: 1em;
+}
+
+.descricao{
+    width: 8.5em;
+}
+
+.botoes-redondos-container{
+    display: flex;
+}
+
+/*Estilização da bara de scroll*/
+.tarefas-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.tarefas-container::-webkit-scrollbar-track {
+    background: #9d9d9d;
+}
+
+.tarefas-container::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 20px;
+}
+
+.tarefas-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+/*----------------------------------*/
+
+.calendario-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 12em;
+}
+
+.estatistica-conclusao-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 12em;
+}

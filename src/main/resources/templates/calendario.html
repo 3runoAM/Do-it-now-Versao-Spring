@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-with, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{menu-principal.css}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <title>Do it, now!</title>
+    </head>
+    <body>
+        <div class="menu-container">
+            <div class="container-logo-imagem">
+                <svg class="logo"></svg>
+                <div class="container-imagem-navegacao">
+                    <span class="imagem-usuario"></span>
+                    <nav>
+                        <ul class="navegacao-container">
+                            <li>
+                                <button class="opcao-nav">
+                                    <i class="bi bi-house-fill black-fill icone-nav pag-atual"></i><a class="name-link pag-atual" href="/home">Home</a>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="opcao-nav">
+                                    <i class="bi bi-calendar3-fill black-fill icone-nav"></i> <a class="name-link" href="#">Calendário</a>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="opcao-nav">
+                                    <i class="bi bi-clipboard-data-fill black-fill icone-nav"></i> <a class="name-link" href="#">Planejamento</a>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="opcao-nav">
+                                    <i class="bi bi-clock-fill black-fill icone-nav"></i><a class="name-link" href="/historico"> Histórico</a>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div>
+                <form class="log-out-container">
+                    <i class="bi bi-door-open-fill black-fill icone-nav"></i><input class="log-out-opcao opcao-nav name-link" type="submit" value="Log out" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

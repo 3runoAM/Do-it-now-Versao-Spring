@@ -1,32 +1,36 @@
 package com.doitnow.doitnow.controllers;
 
+
 import com.doitnow.doitnow.entities.Tarefa;
 import com.doitnow.doitnow.repositorios.TarefasRepo;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
+import java.util.Comparator;
+import java.util.List;
+
 @Controller
 @Slf4j
-@RequestMapping("/edicao")
-public class EdicaoController {
+@RequestMapping("/historico")
+public class HistoricoController {
     private final TarefasRepo tarefasRepo;
-
-    public EdicaoController(TarefasRepo tarefasRepo) {
+    public HistoricoController(TarefasRepo tarefasRepo) {
         this.tarefasRepo = tarefasRepo;
     }
 
     @GetMapping
-    public String edicao(){
-        return "edicao";
+    public String historico(){
+        return "historico";
     }
 
-    @ModelAttribute("tarefa")
-    public Tarefa addTarefaToModelForEditing(String id){
-        log.info("Tarefa requisitada para edição: " + tarefasRepo.findTarefaById(Long.parseLong(id)).toString());
-        return tarefasRepo.findTarefaById(Long.parseLong(id));
+    @ModelAttribute("tarefas")
+    public List<Tarefa> addTarefasToModel(){
+        List<Tarefa> tarefas = tarefasRepo.findAll();
+        tarefas.sort(Comparator.comparing(Tarefa::getDataCriacao).reversed());
+        return tarefas;
     }
 }

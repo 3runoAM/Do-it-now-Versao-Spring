@@ -31,7 +31,6 @@ public class Tarefa {
     private String dataConclusao = null;
     private boolean concluido = false;
 
-
     public void concluirTarefa(){
         this.concluido = true;
         this.dataConclusao = LocalDate.now().toString();

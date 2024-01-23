@@ -7,5 +7,8 @@ import java.util.List;
 
 public interface TarefasRepo extends CrudRepository<Tarefa, Long> {
      List<Tarefa> findTarefasByConcluido(Boolean concluido);
+     @Override
+     List<Tarefa> findAll();
      Tarefa findTarefaById(Long id);
+
 }
