@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" th:href="@{menu-principal.css}">
-        <link rel="stylesheet" th:href="@{card-container-home.css}">
+        <link rel="stylesheet" th:href="@{css/menu-principal.css}">
+        <link rel="stylesheet" th:href="@{css/card-container-home.css}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,12 +26,12 @@
                             </li>
                             <li>
                                 <button class="opcao-nav">
-                                    <i class="bi bi-calendar3-fill black-fill icone-nav"></i> <a class="name-link" href="#">Calendário</a>
+                                    <i class="bi bi-calendar3-fill black-fill icone-nav"></i> <a class="name-link" href="/calendario">Calendário</a>
                                 </button>
                             </li>
                             <li>
                                 <button class="opcao-nav">
-                                    <i class="bi bi-clipboard-data-fill black-fill icone-nav"></i> <a class="name-link" href="#">Planejamento</a>
+                                    <i class="bi bi-clipboard-data-fill black-fill icone-nav"></i> <a class="name-link" href="/planejamento">Planejamento</a>
                                 </button>
                             </li>
                             <li>
@@ -59,13 +59,17 @@
                     <input name="descricao" type="text" th:field="*{descricao}" required>
                     <div class="adicionar-tarefa">
                         <div class="tarefa-detalhes">
+                            <label for="prioridade">Prioridade</label>
                             <select th:field="${tarefa.prioridade}" name="prioridade">
-                                <option value="" selected disabled>Prioridade</option>
                                 <option value="BAIXA">Baixa</option>
                                 <option value="MEDIA">Média</option>
                                 <option value="ALTA">Alta</option>
                             </select>
-                            <input class="data-conclusao" th:field="${tarefa.dataConclusao}" type="date" name="dataConclusao">
+                            <div>
+                                <input class="data-conclusao" th:field="${tarefa.dataConclusao}" type="hidden" id="data-conclsao" name="dataConclusao">
+                                <label for="data-entrega">Data de entrega</label>
+                                <input class="data-conclusao" th:field="${tarefa.dataEntrega}" type="date" id="data-entrega"  name="dataEntrega">
+                            </div>
                         </div>
                         <br/>
                     </div>
@@ -101,14 +105,15 @@
             </div>
             <div class="coluna2">
                 <!--Card de calendario-->
-                <div class="calendario-container card">
-                    <p>UMA VIEW DE CALENADARIO AQUI</p>
-                </div>
+                <div class="calendario-container card" id="calendario"></div>
                 <!--Card de estatistica-->
                 <div class="estatistica-conclusao-container card">
                     <p>Card de estatística de conclusão</p>
                 </div>
             </div>
         </div>
+        <!--Script para calendario-->
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+        <script th:src="@{js/calendario.js}"></script>
     </body>
 </html>

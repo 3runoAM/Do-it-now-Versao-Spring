@@ -38,7 +38,7 @@ body {
 }
 
 .logo {
-    background: url("logo-1.svg") no-repeat;
+    background: url("../svg/logo-1.svg") no-repeat;
     background-size: cover;
 
     width: 15em;

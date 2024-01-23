@@ -26,7 +26,9 @@ public class EdicaoController {
 
     @ModelAttribute("tarefa")
     public Tarefa addTarefaToModelForEditing(String id){
-        log.info("Tarefa requisitada para edição: " + tarefasRepo.findTarefaById(Long.parseLong(id)).toString());
-        return tarefasRepo.findTarefaById(Long.parseLong(id));
+        Tarefa tarefa = tarefasRepo.findTarefaById(Long.parseLong(id));
+        log.info("Tarefa requisitada para edição: " + tarefa);
+        return tarefa;
     }
+
 }
