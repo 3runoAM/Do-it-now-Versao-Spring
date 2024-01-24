@@ -1,50 +1,62 @@
-.cards-container{
+.cards-container-background{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+
+    flex-wrap: wrap;
 
     width: 94em;
     height: 58em;
 
-    border-radius: 2em;
+    border-radius: 1em;
     background: #f2f2f2;
 }
 
 .card {
-    width: 40em;
-    border-radius: 2em;
+    width: 43em;
+    border-radius: 1em;
     background: #FFF;
+}
+
+.colunas-cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
+    height: 100%;
 }
 
 .coluna1, .coluna2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 
-    width: 40em;
-    height: 58em;
+    width: 46%;
+    height: 92%;
 }
 
+/*Card de adição---------------------*/
 .adicionar-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    height: 18em;
-
+    height: 15em;
 }
+/*----------------------------------*/
 
+/*Card de exibição------------------*/
 .tarefas-container{
     display: flex;
     flex-direction: column;
     align-items: center;
 
     height: 35em;
-    overflow-y: scroll;
 }
 
 .tarefas-space{
@@ -54,16 +66,19 @@
     gap: 2em;
 
     padding: 0;
+
+    overflow-y: scroll;
 }
 
 .tarefas-titulo{
     margin-top: 1em;
 }
 
-li:first-child{
+li .tarefa:first-child{
     margin-top: 1.8em;
 }
 
+/*Tarefa individual*/
 .tarefa{
     display: flex;
     align-items: center;
@@ -88,7 +103,7 @@ li:first-child{
     display: flex;
 }
 
-/*Estilização da bara de scroll*/
+/*Barra de scroll*/
 .tarefas-container::-webkit-scrollbar {
     width: 5px;
 }
@@ -105,7 +120,7 @@ li:first-child{
 .tarefas-container::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-/*----------------------------------*/
+/*--------------*/
 
 .calendario-container{
     display: flex;
@@ -113,7 +128,12 @@ li:first-child{
     align-items: center;
     justify-content: center;
 
-    height: 12em;
+    height: 34em;
+}
+
+#calendario{
+    width: 95%;
+    height: 95%
 }
 
 .estatistica-conclusao-container{
@@ -122,5 +142,6 @@ li:first-child{
     align-items: center;
     justify-content: center;
 
-    height: 12em;
+    height: 16em;
 }
+/*----------------------------------*/

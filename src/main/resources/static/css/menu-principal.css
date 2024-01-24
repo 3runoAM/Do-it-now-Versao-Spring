@@ -20,7 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15em;
+    gap: 17em;
 
     height: 60em;
     width: 20em;
@@ -52,7 +52,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4em;
+    gap: 3em;
 
     width: 100%;
 }
@@ -82,6 +82,7 @@ body {
     gap: 1em;
     background: transparent;
     border: none;
+    margin: 0;
 }
 
 .icone-nav{
@@ -103,7 +104,7 @@ body {
 .opcao-nav:hover .icone-nav,
 .opcao-nav:hover .name-link {
     /*color: verde chapado*/
-    color: #008e00;
+    color: #ff7300;
 }
 
 .log-out-container:hover .icone-nav{
@@ -117,5 +118,5 @@ body {
 
 .pag-atual{
     /*Color: laranja chapado*/
-    color: #ff7300;
+    color: #008e00;
 }
