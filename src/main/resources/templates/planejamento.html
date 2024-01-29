@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-with, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{css/menu-principal.css}">
         <link rel="stylesheet" th:href="@{css/card-container-home.css}">
+        <link rel="stylesheet" th:href="@{css/calendario-planejamento.css}">
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,6 +51,20 @@
                 </form>
             </div>
         </div>
-        <div class="cards-container-background"></div>
+        <div class="cards-container-background">
+            <form class="evento-form" th:action="@{/evento}" th:object="${eventoDto}">
+                <input th:field="${eventoDto.titulo}" type="text" placeholder="Título">
+                <textarea th:field="${eventoDto.descricao}" placeholder="Descrição"></textarea>
+                <input th:field="${eventoDto.diaTodo}" id="dia-todo" type="checkbox" placeholder="Data">
+                <label for="dia-todo">Dia todo</label>
+                <input th:field="${eventoDto.dataInicio}" id="data-inicio" type="date"><input th:field="${eventoDto.horaInicio}" id="hora inicio" type="time">
+                <input th:field="${eventoDto.dataFim}" id="data-final" type="date"><input th:field="${eventoDto.horaFim}" id="hora final" type="time">
+                <input th:field="${eventoDto.corDeBackground}" id="cor-background" type="color">
+                <button type="submit">Adicionar</button>
+            </form>
+            <div id="calendario-planejamento"></div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+        <script th:src="@{js/calendario-planejamento.js}"></script>
     </body>
 </html>

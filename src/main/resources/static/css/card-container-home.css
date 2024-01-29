@@ -14,7 +14,7 @@
 }
 
 .card {
-    width: 43em;
+    width: 38em;
     border-radius: 1em;
     background: #FFF;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
@@ -41,14 +41,48 @@
 }
 
 /*Card de adição---------------------*/
-.adicionar-container {
+.adicionar-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-
-    height: 15em;
+    align-items: center;
+    height: 16em;
 }
+
+.adicionar-container{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    align-items: flex-start;
+}
+
+.titulo{
+    font-size: 1.5em;
+}
+
+.descricao-input{
+    width: 70%;
+    height: 25%;
+    background-color: #F2F2F2;
+    border: none;
+    box-shadow: -2px 5px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.adicionar-tarefa{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    height: 26%;
+}
+
+.select-box{
+    width: 50%;
+}
+
 /*----------------------------------*/
 
 /*Card de exibição------------------*/
