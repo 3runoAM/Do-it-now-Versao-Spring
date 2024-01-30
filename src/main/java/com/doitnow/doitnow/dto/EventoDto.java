@@ -9,6 +9,8 @@ import java.time.LocalTime;
 import java.util.List;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class EventoDto {
     private String titulo;
     private String descricao;
@@ -19,5 +21,4 @@ public class EventoDto {
     private LocalTime horaFim;
     private List<Integer> diasDaSemana; // 0 = domingo, 1 = segunda, 2 = terça, 3 = quarta, 4 = quinta, 5 = sexta, 6 = sábado
     private String corDeBackground;
-
 }

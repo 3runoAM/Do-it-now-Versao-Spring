@@ -5,6 +5,7 @@ import com.doitnow.doitnow.dto.EventoDto;
 import com.doitnow.doitnow.mappers.EventoMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,19 +23,17 @@ public class EventoController {
     /**/
 
     @GetMapping
-    public String eventos(){
+    public String eventos(Model model){
+        System.out.println("EventoController: eventos");
+        model.addAttribute("evento", new EventoDto());
+        System.out.println("EventoController: Modeelo criado");
         return "planejamento";
     }
 
     @PostMapping
     public String adicionarEvento(@ModelAttribute EventoDto eventoDto){
         log.info("Evento recebido: " + eventoDto.toString());
-//        mapper.toEvento(eventoDto);
+        mapper.toEvento(eventoDto);
         return "redirect:/evento";
-    }
-
-    @ModelAttribute("eventoDto")
-    public EventoDto addEventoDtoToModel(){
-        return new EventoDto();
     }
 }

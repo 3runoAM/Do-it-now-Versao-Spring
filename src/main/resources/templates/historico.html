@@ -12,43 +12,7 @@
         <title>Do it, now!</title>
     </head>
     <body>
-        <div class="menu-container">
-            <div class="container-logo-imagem">
-                <svg class="logo"></svg>
-                <div class="container-imagem-navegacao">
-                    <span class="imagem-usuario"></span>
-                    <nav>
-                        <ul class="navegacao-container">
-                            <li>
-                                <button class="opcao-nav">
-                                    <i class="bi bi-house-fill black-fill icone-nav"></i><a class="name-link" href="/home">Home</a>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="opcao-nav">
-                                    <i class="bi bi-clipboard-data-fill black-fill icone-nav"></i> <a class="name-link" href="/planejamento">Planejamento</a>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="opcao-nav">
-                                    <i class="bi bi-calendar3-fill black-fill icone-nav"></i> <a class="name-link" href="/calendario">Calendário</a>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="opcao-nav">
-                                    <i class="bi bi-clock-fill black-fill icone-nav pag-atual"></i><a class="name-link pag-atual" href="/historico">Histórico</a>
-                                </button>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div>
-                <form class="log-out-container">
-                    <i class="bi bi-door-open-fill black-fill icone-nav"></i><input class="log-out-opcao opcao-nav name-link" type="submit" value="Log out" />
-                </form>
-            </div>
-        </div>
+        <div th:replace="~{home :: menu}"></div>
 
         <div class="cards-container-background">
             <div class="busca-container card">

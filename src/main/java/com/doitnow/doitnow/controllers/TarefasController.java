@@ -43,7 +43,7 @@ public class TarefasController {
         Tarefa tarefa = tarefasRepo.findTarefaById(Long.parseLong(id));
         tarefa.concluirTarefa();
         tarefasRepo.save(tarefa);
-        log.info("Tarefa concluída: " + tarefa.toString());
+        log.info("Tarefa concluída: " + tarefa);
         return "redirect:/home";
     }
 

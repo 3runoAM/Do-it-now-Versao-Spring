@@ -14,7 +14,7 @@
         <title>Do it, now!</title>
     </head>
     <body>
-        <div class="menu-container">
+        <div th:fragment="menu" class="menu-container">
             <div class="container-logo-imagem">
                 <svg class="logo"></svg>
                 <div class="container-imagem-navegacao">
@@ -23,12 +23,12 @@
                         <ul class="navegacao-container">
                             <li>
                                 <button class="opcao-nav">
-                                    <i class="bi bi-house-fill black-fill icone-nav pag-atual"></i><a class="name-link pag-atual" href="/home">Home</a>
+                                    <i class="bi bi-house-fill black-fill icone-nav"></i><a class="name-link" href="/home">Home</a>
                                 </button>
                             </li>
                             <li>
                                 <button class="opcao-nav">
-                                    <i class="bi bi-clipboard-data-fill black-fill icone-nav"></i> <a class="name-link" href="/planejamento">Planejamento</a>
+                                    <i class="bi bi-clipboard-data-fill black-fill icone-nav"></i> <a class="name-link" href="/evento">Planejamento</a>
                                 </button>
                             </li>
                             <li>
@@ -52,7 +52,6 @@
                 </form>
             </div>
         </div>
-
         <div class="cards-container-background">
             <div class="colunas-cards-container">
                 <div class="coluna1">

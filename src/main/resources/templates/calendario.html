@@ -14,51 +14,15 @@
         <title>Do it, now!</title>
     </head>
     <body>
-        <div class="menu-container">
-            <div class="container-logo-imagem">
-                <svg class="logo"></svg>
-                <div class="container-imagem-navegacao">
-                    <span class="imagem-usuario"></span>
-                    <nav>
-                        <ul class="navegacao-container">
-                            <li>
-                                <button class="opcao-nav">
-                                    <i class="bi bi-house-fill black-fill icone-nav"></i>
-                                    <a class="name-link" href="/home">Home</a>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="opcao-nav">
-                                    <i class="bi bi-clipboard-data-fill black-fill icone-nav"></i>
-                                    <a class="name-link" href="/planejamento">Planejamento</a>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="opcao-nav">
-                                    <i class="bi bi-calendar3-fill black-fill icone-nav pag-atual"></i>
-                                    <a class="name-link pag-atual" href="/calendario">Calendário</a>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="opcao-nav">
-                                    <i class="bi bi-clock-fill black-fill icone-nav"></i>
-                                    <a class="name-link" href="/historico"> Histórico</a>
-                                </button>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div>
-                <form class="log-out-container">
-                    <i class="bi bi-door-open-fill black-fill icone-nav"></i><input class="log-out-opcao opcao-nav name-link" type="submit" value="Log out" />
-                </form>
-            </div>
-        </div>
+        <!--A propriedade th:replace recebe como parâmetro o nome do arquivo onde se encontra
+        o fragment e em seguida o nome do fragment desejado-->
+        <div th:replace="~{home :: menu}"></div>
+
         <!--Calendário-->
         <div class="cards-container-background">
             <div id="calendario"></div>
         </div>
+
         <!--Scripts-->
         <!-- FullCalendar core package -->
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
