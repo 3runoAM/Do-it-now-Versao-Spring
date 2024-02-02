@@ -4,18 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-with, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-        <link rel="stylesheet" th:href="@{css/menu-principal.css}">
-        <link rel="stylesheet" th:href="@{css/card-container-home.css}">
-        <link rel="stylesheet" th:href="@{css/calendario.css}">
-
+        <link rel="stylesheet" th:href="@{css/style.css}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <title>Do it, now!</title>
     </head>
     <body>
-        <!--A propriedade th:replace recebe como parâmetro o nome do arquivo onde se encontra
-        o fragment e em seguida o nome do fragment desejado-->
         <div th:replace="~{home :: menu}"></div>
 
         <!--Calendário-->
@@ -26,6 +21,7 @@
         <!--Scripts-->
         <!-- FullCalendar core package -->
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script th:src="@{js/calendario.js}"></script>
     </body>
 </html>

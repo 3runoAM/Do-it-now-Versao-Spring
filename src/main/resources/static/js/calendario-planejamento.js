@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
     // Seleciona o elemento que será o container do calendário
     let calendarEl = document.getElementById('calendario-planejamento');
 

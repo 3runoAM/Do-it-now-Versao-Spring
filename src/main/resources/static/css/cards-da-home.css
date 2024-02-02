@@ -1,0 +1,130 @@
+/*Estilo base dos cards da home*/
+.card {
+    display: flex;
+    width: 43em;
+    background: #fff;
+    box-shadow: var(--drop-shadow);
+}
+
+.background-card{
+    align-items: center;
+    justify-content: center;
+}
+
+.coluna{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    width: 45em;
+}
+
+/*Altura dos cards da home*/
+.adiciona-tarefa-background-card, .conclusao-porcentagem {
+    height: 21em;
+}
+
+.exibe-tarefa, .calendario {
+    height: 30em;
+}
+
+/*Card: Adicionar tarefa*/
+.adiciona-tarefa-background-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.adiciona-tarefa-content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0.8em;
+
+    width: 80%;
+    height: 14em;
+    position: relative;
+}
+
+.titulo-input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.titulo {
+    font: 600 2em Open Sans, serif;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.erro-validacao{
+    font: 600 1.2em Open Sans, serif;
+    color: #ff0000;
+    margin: 0;
+}
+
+.descricao-input {
+    height: 4.5em;
+    width: 30em;
+
+    background: #F2F2F2;
+    border: none;
+    border-radius: 0.5em;
+    box-shadow: var(--drop-shadow);
+}
+
+.detalhes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.detalhes{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.detalhes-titulo{
+    font: 600 1.4em Roboto, serif;
+}
+
+.select-box{
+    width: 6.2em;
+}
+
+.detalhes-botao-container{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.botao-tarefa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: none;
+}
+
+.botoes-tarefa-container{
+    display: flex;
+    gap: 1.5em;
+}
+
+.bi-plus-square-fill{
+    font-size: 4em;
+    color: #06986e;
+    transform: scaleX(110%);
+}
+
+.bi-x-square-fill{
+    font-size: 4em;
+    color: #d71356;
+    transform: scaleX(110%);
+}
+
+/*-----------------*/

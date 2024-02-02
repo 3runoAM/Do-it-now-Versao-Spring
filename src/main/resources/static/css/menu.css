@@ -1,0 +1,79 @@
+.menu-lateral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20rem;
+
+    width: 18em;
+    height: 60em;
+    background-color: #fff;
+    border-radius:0 1.5em 1.5em 0;
+    box-shadow: var(--card-shadow);
+}
+
+.menu-superior-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 2.4rem;
+}
+
+/*Elementos do menu --------------------*/
+#logo{
+    background: url("../svg/logo-1.svg"), no-repeat;
+    background-size: cover;
+    width: 10rem;
+    height: 2rem;
+}
+
+.imagem-usuario{
+    width: 9rem;
+    height: 9rem;
+    border-radius: 0.5em;
+}
+
+.navegacao-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    gap: 2rem;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.opcao-nav, .log-out-container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0.5rem;
+
+    background-color: transparent;
+    border: none;
+}
+
+.bi {
+    font-size: 1.5rem;
+}
+
+.name-link{
+    font: 1.6rem 'Inika', sans-serif;
+    color: #000;
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+
+
+.opcao-nav:hover .bi, .opcao-nav:hover .name-link{
+    color: rgb(252, 148, 41);
+}
+
+.log-out-container:hover .bi{
+    color: rgb(191, 5, 5);
+}
+/*-----------------------------------*/

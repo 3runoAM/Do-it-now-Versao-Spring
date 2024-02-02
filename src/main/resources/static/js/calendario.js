@@ -1,10 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
     // Seleciona o elemento que será o container do calendário
     let calendarEl = document.getElementById('calendario');
-
     // Instancia o calendário e define as configurações
     let calendar = new FullCalendar.Calendar(calendarEl, {
-        width: '95%',
+        "height": '90%',
         "locale": 'pt-br', // Define o idioma do calendário
         "initialView": 'dayGridMonth', // Define a visualização inicial, nesse caso é a view de mês
         dateClick: function(info) {
